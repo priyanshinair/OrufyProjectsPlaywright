@@ -24,16 +24,25 @@ export class GlobalCustomField {
       // Dropdown-specific elements
       this.addDropdownOption = page.getByRole('textbox', { name: 'Enter option...' });
       this.addMoreDropdownOption = page.getByRole('button', { name: 'Add More' });
-  
       this.createFieldBtn = page.getByRole('button', { name: 'Create', exact:true })
       this.createAnotherBtn = page.getByRole('button', { name: 'Create another' });
+
+      // Actions
+      this.threedotBtn = page.locator('[id="radix-:r1o:"]')
+      this.delete = page.getByRole('menuitem', { name: 'Delete' })
+      this.deleteBtn = page.getByRole('button', { name: 'Delete' })
+      this.edit = page.getByRole('menuitem', { name: 'Edit' })
+      this.saveBtn = page.getByRole('button', { name: 'Save' })
+
     }
   
+    //open global custom fields section
     async openGlobalCustomFields() {
       await this.settings.click();
       await this.globalCustomFieldOption.click();
     }
   
+    //create new custom field
     async createCustomField(name){
         
         await this.createBtn.click()
@@ -41,5 +50,20 @@ export class GlobalCustomField {
         await this.typeOption.click()
         await this.paragraphType.click()
         await this.createFieldBtn.click();
+    }
+
+    //edit custom field
+    async editCustomField(name){
+      await this.threedotBtn.click()
+      await this.edit.click()
+      await this.nameField.fill(name)
+      await this.saveBtn.click()
+    }
+
+    //delete custom field
+    async deleteCustomFields(){
+      await this.threedotBtn.click()
+      await this.delete.click()
+      await this.deleteBtn.click()
     }
 }

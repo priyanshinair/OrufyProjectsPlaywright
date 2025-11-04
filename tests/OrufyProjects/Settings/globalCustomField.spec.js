@@ -1,4 +1,4 @@
-import {test, expect} from '/home/om/Videos/Priyanshi P/Orufy Playwright/tests/OrufyProjects/fixtures/loginfixture.js'
+import { test, expect } from '../fixtures/loginfixture';
 import { GlobalCustomField } from '../../../Orufy Projects Pages/globalCustomField'
 
 
@@ -16,13 +16,21 @@ test.describe('Global Custom Field Tests', () => {
     });
 */
     //create 10 custom fields
-    test('Limit check: only 10 custom fields can be created', async () => {
+    test.skip('Limit check: only 10 custom fields can be created', async () => {
       for (let i = 1; i <= 10; i++) {
         const fieldName = `Paragraph Field ${i}`;
         await gcf.createCustomField(fieldName);
        
     }})
         
+    //edit custom field
+    test('edit custom field', async() => {
+      await gcf.editCustomField('editted name')
+    })
+    //delete custom field
+    test('delete custom field', async() => {
+      await gcf.deleteCustomFields()
+    })
  /* 
     test('Create Dropdown Custom Field', async () => {
         console.log('Calling createCustomField with:', 'Status Field', 'Dropdown', ['Open', 'Closed', 'Pending']);

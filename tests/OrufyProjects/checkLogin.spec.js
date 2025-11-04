@@ -7,7 +7,7 @@ test('test', async ({ page }) => {
 });
 */
 
-import {test} from '/home/om/Videos/Priyanshi P/Orufy Playwright/tests/OrufyProjects/fixtures/loginfixture.js'
+import { test, expect } from '../fixtures/loginfixture';
 
 
 test('verify dashboard after login', async ({ loggedInPage ,page }) => {

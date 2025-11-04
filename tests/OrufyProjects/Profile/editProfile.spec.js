@@ -1,4 +1,4 @@
-import {test, expect} from '/home/om/Videos/Priyanshi P/Orufy Playwright/tests/OrufyProjects/fixtures/loginfixture.js'
+import { test, expect } from '../fixtures/loginfixture';
 import { EditProfile } from '../../../Orufy Projects Pages/editProfile'
 
 test.describe.serial('Profile Test Cases', () => {
