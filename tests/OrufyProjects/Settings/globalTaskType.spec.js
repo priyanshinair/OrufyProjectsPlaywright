@@ -1,5 +1,5 @@
 import { test, expect } from '../fixtures/loginfixture';
-import { GlobalTaskType } from '../../../Orufy Projects Pages/globalTaskTYpe';
+import { GlobalTaskType } from '../../../Orufy Projects Pages/globalTaskType';
 
 test.describe('Global Task Type test cases', () => {
     let gtt;
@@ -16,4 +16,5 @@ test.describe('Global Task Type test cases', () => {
     test('delete task type', async() => {
         await gtt.deleteTaskType()
     })
+    
 })
