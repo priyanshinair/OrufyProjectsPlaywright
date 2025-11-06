@@ -1,7 +1,7 @@
 export class ManageUser {
     constructor(page){
         this.page = page
-        this.settings = page.getByRole('img').nth(4)
+        this.settings = 
         this.manageUser = page.getByText('Manage Users')
         this.invite = page.getByRole('button', { name: 'Invite Users' })
         this.emailField = page.getByPlaceholder('Enter email')
