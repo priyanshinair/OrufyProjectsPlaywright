@@ -13,7 +13,9 @@ export class RolesPermission {
         this.roles = page.getByRole('switch').nth(4)
         this.import = page.getByRole('switch').nth(5)
         this.createBtn = page.getByRole('button', {name: 'Create'})
-
+        this.threeDot = page.getByRole('button').filter({ hasText: /^$/ }).nth(2)
+        this.delete = page.getByRole('menuitem', { name: 'Delete' })
+        this.deleteBtn = page.getByRole('button', { name: 'Delete' })
     }
 
     async openRoles(){
@@ -26,6 +28,12 @@ export class RolesPermission {
         await this.nameField.fill(name)
         await this.createProject.click()
         await this.createBtn.click()
+    }
+
+    async deleteRole(){
+        await this.threeDot.click()
+        await this.delete.click()
+        await this.deleteBtn.click()
     }
 
 }

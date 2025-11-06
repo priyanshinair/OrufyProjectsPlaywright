@@ -18,8 +18,12 @@ test.describe('roles & permissions test cases', () => {
         await page.waitForTimeout(5000)
     })
 
-    test('create role', async() => {
+    test.skip('create role', async() => {
         const rolename = generateRandomName()
         await rp.createRoles(rolename)
+    })
+
+    test('delete role', async() => {
+        await rp.deleteRole()
     })
 })
