@@ -10,8 +10,15 @@ export class CreateProject {
         this.addStatusBtn = page.getByRole('button', { name: 'Add Status' }).first();
         this.doneStatusBtn = page.getByRole('button', { name: 'Add Status' }).nth(1);
         this.createBtn = page.getByRole('button', { name: 'Create Project' });
+
+        this.threedotBtn =  page.getByRole('button').nth(5)
+        this.delete =  page.getByRole('menuitem', { name: 'Delete' })
+        this.deleteProjectName =  page.getByRole('textbox', { name: 'Enter Project Name' })
+        this.deleteBtn =  page.getByRole('button', { name: 'Delete' })
+
     }
 
+    //create project 
     async createProject(projectname, statusname, donestatusname) {
         await this.createProjectBtn.click();
         await this.projectName.fill(projectname);
@@ -30,5 +37,13 @@ export class CreateProject {
         //await this.scrumProject.click()
 
         await this.createBtn.click();
+    }
+
+    //delete project 
+    async deleteProject(projectname){
+        await this.threedotBtn.click()
+        await this.delete.click()
+        await this.deleteProjectName.fill(projectname)
+        await this.deleteBtn.click()
     }
 }

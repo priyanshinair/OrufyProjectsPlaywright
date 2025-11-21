@@ -13,6 +13,10 @@ test.describe('create project test cases', () =>{
     test('create project', async() => {
         cp.createProject('playwright generated project1','playwright generated status', 'playwright done status')
     })
+
+    test('delete project', async() =>{
+        await cp.deleteProject('playwright generated project1')
+    })
 })
 
 
